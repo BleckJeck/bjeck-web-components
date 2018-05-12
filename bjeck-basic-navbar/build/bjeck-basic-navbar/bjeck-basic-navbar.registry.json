@@ -1,0 +1,12 @@
+{
+  "namespace": "BjeckBasicNavbar",
+  "fsNamespace": "bjeck-basic-navbar",
+  "loader": "../bjeck-basic-navbar.js",
+  "core": "bjeck-basic-navbar.iq1d0kff.js",
+  "corePolyfilled": "bjeck-basic-navbar.yc0xiuur.js",
+  "components": {
+    "bjeck-basic-navbar": {
+      "$": "oguiodnj"
+    }
+  }
+}
