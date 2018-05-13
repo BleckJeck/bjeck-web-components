@@ -1,0 +1,18 @@
+{
+  "namespace": "mycomponent",
+  "fsNamespace": "mycomponent",
+  "loader": "../mycomponent.js",
+  "corePolyfilled": "es5-build-disabled.js",
+  "core": "mycomponent.core.js",
+  "components": {
+    "bjeck-main-navbar": {
+      "$": "bjeck-main-navbar"
+    },
+    "bjeck-side-navbar": {
+      "$": "bjeck-main-navbar"
+    },
+    "bjeck-sidemenu-bundle": {
+      "$": "bjeck-main-navbar"
+    }
+  }
+}

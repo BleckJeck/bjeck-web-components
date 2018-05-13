@@ -1,0 +1,76 @@
+{
+  "components": [
+    {
+      "tag": "bjeck-main-navbar",
+      "dependencies": [],
+      "componentClass": "BjeckMainNavbar",
+      "componentPath": "components/bjeck-main-navbar/bjeck-main-navbar.js",
+      "styles": {
+        "$": {
+          "stylePaths": [
+            "components/bjeck-main-navbar/bjeck-main-navbar.scss"
+          ]
+        }
+      },
+      "events": [
+        {
+          "event": "openBtn"
+        }
+      ]
+    },
+    {
+      "tag": "bjeck-side-navbar",
+      "dependencies": [],
+      "componentClass": "BjeckSideNavbar",
+      "componentPath": "components/bjeck-side-navbar/bjeck-side-navbar.js",
+      "styles": {
+        "$": {
+          "stylePaths": [
+            "components/bjeck-side-navbar/bjeck-side-navbar.scss"
+          ]
+        }
+      },
+      "events": [
+        {
+          "event": "closeBtn"
+        }
+      ]
+    },
+    {
+      "tag": "bjeck-sidemenu-bundle",
+      "dependencies": [
+        "bjeck-main-navbar",
+        "bjeck-side-navbar"
+      ],
+      "componentClass": "BjeckSidemenuBundle",
+      "componentPath": "components/bjeck-sidemenu-bundle/bjeck-sidemenu-bundle.js",
+      "styles": {},
+      "states": [
+        {
+          "name": "sideMenuWidth"
+        }
+      ],
+      "listeners": [
+        {
+          "event": "closeBtn",
+          "method": "closeSideMenuHandler",
+          "passive": false,
+          "capture": false
+        },
+        {
+          "event": "openBtn",
+          "method": "openSideMenuHandler",
+          "passive": false,
+          "capture": false
+        }
+      ]
+    }
+  ],
+  "collections": [],
+  "compiler": {
+    "name": "@stencil/core",
+    "version": "0.7.26",
+    "typescriptVersion": "2.8.3"
+  },
+  "bundles": []
+}
