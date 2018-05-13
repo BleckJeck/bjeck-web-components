@@ -15,8 +15,8 @@ export class BjeckSideNavbar {
 
   render() {
     return (
-      <div>
-        <a href="#" onClick={this.closeBtnHandler.bind(this)}>&times;</a>
+      <div id="wrapper">
+        <a id="close-side-menu" href="#" onClick={this.closeBtnHandler.bind(this)}>&times;</a>
         <slot name="side" />
       </div>
     );

@@ -6,16 +6,16 @@ import { Component, Listen, State } from '@stencil/core';
 
 export class BjeckSidemenuBundle {
 
-@State() sideMenuWidth = {"display": "none"}
+@State() sideMenuWidth = {"width": "0px"}
 
 @Listen('openBtn')
 openSideMenuHandler() {
-  this.sideMenuWidth = {"display": "block"}
+  this.sideMenuWidth = {"width": "250px"}
 }
 
 @Listen('closeBtn')
 closeSideMenuHandler() {
-  this.sideMenuWidth = {"display": "none"}
+  this.sideMenuWidth = {"width": "0px"}
 }
 
   render() {

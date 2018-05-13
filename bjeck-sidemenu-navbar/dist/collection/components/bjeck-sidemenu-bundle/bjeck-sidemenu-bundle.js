@@ -1,12 +1,12 @@
 export class BjeckSidemenuBundle {
     constructor() {
-        this.sideMenuWidth = { "display": "none" };
+        this.sideMenuWidth = { "width": "0px" };
     }
     openSideMenuHandler() {
-        this.sideMenuWidth = { "display": "block" };
+        this.sideMenuWidth = { "width": "250px" };
     }
     closeSideMenuHandler() {
-        this.sideMenuWidth = { "display": "none" };
+        this.sideMenuWidth = { "width": "0px" };
     }
     render() {
         return ([

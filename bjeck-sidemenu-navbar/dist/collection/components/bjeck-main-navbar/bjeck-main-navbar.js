@@ -5,7 +5,7 @@ export class BjeckMainNavbar {
     render() {
         return (h("nav", null,
             h("span", null,
-                h("a", { href: "#", onClick: this.openBtnHandler.bind(this) },
+                h("a", { id: "open-side-menu", href: "#", onClick: this.openBtnHandler.bind(this) },
                     h("svg", { width: "30", height: "30" },
                         h("path", { d: "M0,5 30,5", stroke: "#fff", "stroke-width": "5" }),
                         h("path", { d: "M0,14 30,14", stroke: "#fff", "stroke-width": "5" }),

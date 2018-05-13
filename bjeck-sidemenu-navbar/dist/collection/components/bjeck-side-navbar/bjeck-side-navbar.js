@@ -3,8 +3,8 @@ export class BjeckSideNavbar {
         this.closeBtn.emit();
     }
     render() {
-        return (h("div", null,
-            h("a", { href: "#", onClick: this.closeBtnHandler.bind(this) }, "\u00D7"),
+        return (h("div", { id: "wrapper" },
+            h("a", { id: "close-side-menu", href: "#", onClick: this.closeBtnHandler.bind(this) }, "\u00D7"),
             h("slot", { name: "side" })));
     }
     static get is() { return "bjeck-side-navbar"; }

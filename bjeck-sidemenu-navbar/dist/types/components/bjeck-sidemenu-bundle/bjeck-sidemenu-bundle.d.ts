@@ -1,7 +1,16 @@
 import '../../stencil.core';
+import '../../stencil.core';
+import '../../stencil.core';
+import '../../stencil.core';
+import '../../stencil.core';
+import '../../stencil.core';
+import '../../stencil.core';
+import '../../stencil.core';
+import '../../stencil.core';
+import '../../stencil.core';
 export declare class BjeckSidemenuBundle {
     sideMenuWidth: {
-        "display": string;
+        "width": string;
     };
     openSideMenuHandler(): void;
     closeSideMenuHandler(): void;
