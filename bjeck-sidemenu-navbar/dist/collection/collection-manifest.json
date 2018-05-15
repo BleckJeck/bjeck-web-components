@@ -12,6 +12,13 @@
           ]
         }
       },
+      "props": [
+        {
+          "name": "brand",
+          "type": "String",
+          "attr": "brand"
+        }
+      ],
       "events": [
         {
           "event": "openBtn"
@@ -45,6 +52,13 @@
       "componentClass": "BjeckSidemenuBundle",
       "componentPath": "components/bjeck-sidemenu-bundle/bjeck-sidemenu-bundle.js",
       "styles": {},
+      "props": [
+        {
+          "name": "brand",
+          "type": "String",
+          "attr": "brand"
+        }
+      ],
       "states": [
         {
           "name": "sideMenuWidth"

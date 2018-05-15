@@ -1533,6 +1533,23 @@ s=document.querySelector("script[data-namespace='mycomponent']");if(s){resources
     // remove the queue now that the core file has initialized
         App.$r = null;
   }
+  function attributeChangedCallback(membersMeta, elm, attribName, oldVal, newVal, propName, memberMeta) {
+    // only react if the attribute values actually changed
+    if (membersMeta && oldVal !== newVal) {
+      // using the known component meta data
+      // look up to see if we have a property wired up to this attribute name
+      for (propName in membersMeta) {
+        memberMeta = membersMeta[propName];
+        // normalize the attribute name w/ lower case
+                if (memberMeta.attribName && toLowerCase(memberMeta.attribName) === toLowerCase(attribName)) {
+          // cool we've got a prop using this attribute name, the value will
+          // be a string, so let's convert it to the correct type the app wants
+          elm[propName] = parsePropertyValue(memberMeta.propType, newVal);
+          break;
+        }
+      }
+    }
+  }
   function useShadowDom(supportsNativeShadowDom, cmpMeta) {
     return supportsNativeShadowDom && 1 /* ShadowDom */ === cmpMeta.encapsulation;
   }
@@ -1697,7 +1714,12 @@ s=document.querySelector("script[data-namespace='mycomponent']");if(s){resources
       // coolsville, our host element has just hit the DOM
       connectedCallback(plt, cmpMeta, this);
     };
-    false;
+    true;
+    HostElementConstructor.attributeChangedCallback = function(attribName, oldVal, newVal) {
+      // the browser has just informed us that an attribute
+      // on the host element has changed
+      attributeChangedCallback(cmpMeta.membersMeta, this, attribName, oldVal, newVal);
+    };
     HostElementConstructor.disconnectedCallback = function() {
       // the element has left the builing
       disconnectedCallback(plt, this);
@@ -1814,9 +1836,24 @@ s=document.querySelector("script[data-namespace='mycomponent']");if(s){resources
         globalDefined[cmpMeta.tagNameMeta] = true;
         // initialize the members on the host element prototype
                 initHostElement(plt, cmpMeta, HostElementConstructor.prototype, hydratedCssClass);
-        false;
+        true;
+        {
+          // add which attributes should be observed
+          const observedAttributes = [];
+          // at this point the membersMeta only includes attributes which should
+          // be observed, it does not include all props yet, so it's safe to
+          // loop through all of the props (attrs) and observed them
+                    for (const propName in cmpMeta.membersMeta) {
+            cmpMeta.membersMeta[propName].attribName && observedAttributes.push(
+            // add this attribute to our array of attributes we need to observe
+            cmpMeta.membersMeta[propName].attribName);
+          }
+          // set the array of all the attributes to keep an eye on
+          // https://www.youtube.com/watch?v=RBs21CFBALI
+                    HostElementConstructor.observedAttributes = observedAttributes;
+        }
         // define the custom element
-        win.customElements.define(cmpMeta.tagNameMeta, HostElementConstructor);
+                win.customElements.define(cmpMeta.tagNameMeta, HostElementConstructor);
       }
     }
     function requestBundle(cmpMeta, elm) {

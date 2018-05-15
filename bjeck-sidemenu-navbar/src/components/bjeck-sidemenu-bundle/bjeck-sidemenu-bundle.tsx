@@ -1,4 +1,4 @@
-import { Component, Listen, State } from '@stencil/core';
+import { Component, Listen, State, Prop } from '@stencil/core';
 
 @Component({
   tag: 'bjeck-sidemenu-bundle'
@@ -6,7 +6,9 @@ import { Component, Listen, State } from '@stencil/core';
 
 export class BjeckSidemenuBundle {
 
-@State() sideMenuWidth = {"width": "0px"}
+@Prop() brand: string;
+
+@State() sideMenuWidth = {"width": "0"}
 
 @Listen('openBtn')
 openSideMenuHandler() {
@@ -15,12 +17,12 @@ openSideMenuHandler() {
 
 @Listen('closeBtn')
 closeSideMenuHandler() {
-  this.sideMenuWidth = {"width": "0px"}
+  this.sideMenuWidth = {"width": "0"}
 }
 
   render() {
     return ([
-      <bjeck-main-navbar>
+      <bjeck-main-navbar brand={this.brand}>
         <slot name="main" />
       </bjeck-main-navbar>,
 

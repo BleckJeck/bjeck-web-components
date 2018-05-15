@@ -1,4 +1,4 @@
-import { Component, Event, EventEmitter } from '@stencil/core';
+import { Component, Event, EventEmitter, Prop } from '@stencil/core';
 
 @Component({
   tag: 'bjeck-main-navbar',
@@ -6,6 +6,8 @@ import { Component, Event, EventEmitter } from '@stencil/core';
 })
 
 export class BjeckMainNavbar {
+
+  @Prop() brand: string;
 
   @Event() openBtn: EventEmitter
 
@@ -16,15 +18,18 @@ export class BjeckMainNavbar {
   render() {
     return (
       <nav>
-        <span>
-          <a id="open-side-menu" href="#" onClick={this.openBtnHandler.bind(this)}>
-            <svg width="30" height="30">
-              <path d="M0,5 30,5" stroke="#fff" stroke-width="5" />
-              <path d="M0,14 30,14" stroke="#fff" stroke-width="5" />
-              <path d="M0,23 30,23" stroke="#fff" stroke-width="5" />
+        <span id="open-side-btn">
+          <a href="#" onClick={this.openBtnHandler.bind(this)}>
+            <svg height="100%" viewBox="0 0 30 30">
+              <g stroke="#fff" stroke-width="3">
+                <path d="M0,5 30,5" />
+                <path d="M0,14 30,14" />
+                <path d="M0,23 30,23" />
+              </g>
             </svg>
           </a>
         </span>
+        <p id="branding">{this.brand}</p>
         <slot name="main" />
       </nav>
     );

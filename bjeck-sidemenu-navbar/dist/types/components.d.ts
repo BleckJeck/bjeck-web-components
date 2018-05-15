@@ -29,7 +29,7 @@ declare global {
 
   namespace StencilComponents {
     interface BjeckMainNavbar {
-
+      'brand': string;
     }
   }
 
@@ -52,6 +52,7 @@ declare global {
   }
   namespace JSXElements {
     export interface BjeckMainNavbarAttributes extends HTMLAttributes {
+      'brand'?: string;
       'onOpenBtn'?: (event: CustomEvent) => void;
     }
   }
@@ -95,7 +96,7 @@ declare global {
 
   namespace StencilComponents {
     interface BjeckSidemenuBundle {
-
+      'brand': string;
     }
   }
 
@@ -118,7 +119,7 @@ declare global {
   }
   namespace JSXElements {
     export interface BjeckSidemenuBundleAttributes extends HTMLAttributes {
-
+      'brand'?: string;
     }
   }
 }

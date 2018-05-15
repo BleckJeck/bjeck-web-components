@@ -120,4 +120,4 @@ function doesNotSupportsDynamicImports(dynamicImportTest) {
 
     init(win, doc, namespace, fsNamespace, resourcesUrl, appCore, appCoreSsr, appCorePolyfilled, hydratedCssClass, components);
 
-    })(window, document, "mycomponent","mycomponent",0,"mycomponent.core.js","es5-build-disabled.js","hydrated",[["bjeck-main-navbar","bjeck-main-navbar",1],["bjeck-side-navbar","bjeck-main-navbar",1],["bjeck-sidemenu-bundle","bjeck-main-navbar",0,[["sideMenuWidth",5]],0,[["openBtn","openSideMenuHandler"],["closeBtn","closeSideMenuHandler"]]]],HTMLElement.prototype);
+    })(window, document, "mycomponent","mycomponent",0,"mycomponent.core.js","es5-build-disabled.js","hydrated",[["bjeck-main-navbar","bjeck-main-navbar",1,[["brand",1,0,1,2]]],["bjeck-side-navbar","bjeck-main-navbar",1],["bjeck-sidemenu-bundle","bjeck-main-navbar",0,[["brand",1,0,1,2],["sideMenuWidth",5]],0,[["openBtn","openSideMenuHandler"],["closeBtn","closeSideMenuHandler"]]]],HTMLElement.prototype);
