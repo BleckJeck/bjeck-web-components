@@ -20,11 +20,12 @@ bjeck-side-navbar {
       transition: 0.3s; }
     bjeck-side-navbar ul a:hover {
       color: #fff; }
-  bjeck-side-navbar a#close-side-menu {
+  bjeck-side-navbar span#close-side-menu {
     position: absolute;
     top: 0;
     right: 22px;
     font-size: 36px;
     margin-left: 50px;
     text-decoration: none;
-    color: #ccc; }
+    color: #ccc;
+    cursor: pointer; }

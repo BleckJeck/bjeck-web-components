@@ -18,16 +18,14 @@ export class BjeckMainNavbar {
   render() {
     return (
       <nav>
-        <span id="open-side-btn">
-          <a href="#" onClick={this.openBtnHandler.bind(this)}>
-            <svg height="100%" viewBox="0 0 30 30">
-              <g stroke="#fff" stroke-width="3">
-                <path d="M0,5 30,5" />
-                <path d="M0,14 30,14" />
-                <path d="M0,23 30,23" />
-              </g>
-            </svg>
-          </a>
+        <span id="open-side-btn" onClick={this.openBtnHandler.bind(this)}>
+          <svg height="100%" viewBox="0 0 30 30">
+            <g stroke="#fff" stroke-width="3">
+              <path d="M0,5 30,5" />
+              <path d="M0,14 30,14" />
+              <path d="M0,23 30,23" />
+            </g>
+          </svg>
         </span>
         <p id="branding">{this.brand}</p>
         <slot name="main" />

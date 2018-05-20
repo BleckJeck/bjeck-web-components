@@ -4,7 +4,7 @@ export class BjeckSideNavbar {
     }
     render() {
         return (h("div", { id: "wrapper" },
-            h("a", { id: "close-side-menu", href: "#", onClick: this.closeBtnHandler.bind(this) }, "\u00D7"),
+            h("span", { id: "close-side-menu", onClick: this.closeBtnHandler.bind(this) }, "\u00D7"),
             h("slot", { name: "side" })));
     }
     static get is() { return "bjeck-side-navbar"; }

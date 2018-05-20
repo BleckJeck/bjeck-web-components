@@ -27,7 +27,7 @@ bjeck-side-navbar {
     }
   }
 
-  a#close-side-menu {
+  span#close-side-menu {
     position: absolute;
     top: 0;
     right: 22px;
@@ -35,5 +35,6 @@ bjeck-side-navbar {
     margin-left: 50px;
     text-decoration: none;
     color: #ccc;
+    cursor: pointer;
   }
 }
